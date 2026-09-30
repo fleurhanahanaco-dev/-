@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="今の気持ちを、少しやさしい言葉に。保存も通信もしないポジティブ変換アプリ。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' file: data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'; form-action 'none'; base-uri 'none'">
+<title>ポジっと！ビタミン｜こころに、ひとさじのビタミン</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23f4e2e5'/%3E%3Ctext x='12' y='47' font-size='44'%3E✦%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#463d43;--orange:#ad526c;--pink:#ad526c;--yellow:#f4e2e5;--paper:#faf8f7;--green:#f1e9ec}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;line-height:1.8}button,textarea{font:inherit}button{cursor:pointer}button:focus-visible,textarea:focus-visible{outline:3px solid #8a3580;outline-offset:5px}header{max-width:1140px;margin:auto;padding:25px 30px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e8e2d6}.logo{font-size:28px;font-weight:900;letter-spacing:-2px}.logo b{color:var(--orange)}.badge{font-size:13px;background:var(--green);padding:5px 14px;border-radius:30px;font-weight:700}main{max-width:1080px;margin:36px auto 0;padding:0 24px}.intro{display:flex;align-items:center;gap:14px;margin-bottom:22px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;color:#946878}.intro h1{font-size:clamp(24px,3.3vw,38px);line-height:1.5;margin:5px 0;letter-spacing:.03em}.intro h1 span{background:linear-gradient(transparent 65%,var(--yellow) 65%)}.intro p{margin:8px 0;color:#6c6260;font-size:15px}.workspace{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:stretch}.input-card{background:white;border:1px solid #e9dfe1;border-radius:26px;padding:28px;box-shadow:0 12px 36px #61414f08}.step{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:17px}.step span{display:inline-grid;place-items:center;width:29px;height:29px;border-radius:50%;background:var(--yellow);font-size:13px}textarea{width:100%;min-height:160px;resize:vertical;background:#fcfafb;border:1px solid #e5dade;border-radius:15px;padding:17px;color:var(--ink);margin-top:18px;line-height:1.8;font-size:16px}textarea::placeholder{color:#92867f}.meta{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:#81756e;margin-top:3px}.examples{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}.chip{border:1px solid #e9dfe3;background:#fcf8fa;border-radius:30px;padding:6px 12px;font-size:13px;color:#6b5144}.chip:hover{background:#f5e8ed}.convert{width:100%;background:var(--orange);color:#fff;font-size:18px;font-weight:700;border:1px solid #ad526c;border-radius:14px;padding:14px 12px;box-shadow:0 5px 14px #ad526c24;transition:transform .15s,box-shadow .15s}.convert:hover{background:#96435c;transform:translateY(-2px)}.convert:active{transform:translateY(4px);box-shadow:none}.small-note{text-align:center;color:#7a6b60;font-size:12px;margin:15px 0 0}.companion{position:relative;background:#fff;border:1px solid #e9dfe1;box-shadow:0 12px 36px #61414f08;border-radius:26px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:24px 15px 14px;min-height:405px}.speech{z-index:1;background:#fcf5f7;border:1px solid #ead9df;border-radius:20px;padding:9px 20px;font-size:16px;font-weight:600;transform:none}.portrait{width:235px;height:310px;margin:10px 0 0;position:relative;overflow:hidden;mix-blend-mode:normal;animation:float 3.6s ease-in-out infinite}.portrait img{position:absolute;width:1300px;max-width:none;height:auto;left:-638px;top:0}.spark{position:absolute;font-size:34px;color:#c9a8b3;left:24px;top:140px}.spark.two{left:auto;right:22px;top:260px;font-size:26px}.companion small{font-size:12px;letter-spacing:2px;font-weight:500;color:#8d7680}.result{margin-top:36px;border:1px solid #e9dfe1;border-radius:24px;background:#fff;padding:28px;scroll-margin-top:20px}.result[hidden]{display:none}.result .step span{background:#f4e2e5}.ack{font-size:15px;color:#746365;margin:18px 0 10px}.positive{font-size:clamp(22px,3vw,29px);line-height:1.7;font-weight:800;margin:6px 0 20px;white-space:pre-wrap}.result-foot{display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px dashed #ddcfc8;padding-top:16px}.result-foot p{font-size:14px;margin:0}.reset{flex-shrink:0;border:1px solid #daccc6;border-radius:20px;background:#fff8ef;padding:7px 14px;font-size:13px}.daily{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;margin:32px 0}.daily article{border-radius:20px;padding:22px 25px;background:#f5edf0;border:1px solid #eae0e4}.daily article:last-child{background:#f2f1ed;border-color:#e6e3dc}.daily h2{font-size:14px;margin:0 0 8px;display:flex;justify-content:space-between;align-items:center}.daily h2 span{font-size:12px;font-weight:400}.daily p{font-size:18px;font-weight:800;margin:0;line-height:1.7}.daily article:last-child p{font-size:16px}.error{color:#a92b35;font-size:14px;margin:10px 0 0}.error:empty{display:none}footer{padding:0 24px 28px;text-align:center;color:#7a7068;font-size:12px}footer p{margin:4px 0}.flower{color:var(--pink);font-size:26px;vertical-align:middle;margin-right:6px}@keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}@media(max-width:700px){header{padding:16px 20px}.logo{font-size:24px}.badge{font-size:11px}main{margin-top:23px;padding:0 18px}.workspace{grid-template-columns:1fr;gap:22px}.input-card{padding:22px}.companion{min-height:260px;border-radius:24px;flex-direction:row;padding:20px}.portrait{width:175px;height:230px;flex-shrink:0}.portrait img{width:970px;left:-476px}.speech{font-size:14px;padding:10px;max-width:145px}.companion small{display:none}.spark{left:20px;top:190px;font-size:28px}.spark.two{right:16px;top:20px}.daily{grid-template-columns:1fr;gap:14px;margin-top:25px}.result{padding:22px}.result-foot{align-items:flex-start;flex-direction:column}}@media(max-width:380px){.companion{padding:12px 4px}.speech{font-size:12px}.badge{padding:5px 8px}}
+
+/* Each pose uses a bounded window into the supplied character sheet. */
+.portrait{width:235px;height:auto;aspect-ratio:270 / 415;flex-shrink:0}
+.portrait img{width:619.25926%;height:auto;left:var(--pose-x,-303.7037%);top:var(--pose-y,0%)}
+.mood-caption{font-size:13px;color:#806471;margin:8px 0 0;text-align:center}
+
+
+
+
+
+@media(max-width:700px){.portrait{width:175px;height:auto}.mood-caption{font-size:12px}.companion{flex-wrap:wrap}.mood-caption{flex-basis:100%}}
+
+:root{--paper:#fffaf4;--ink:#514039;--orange:#b45461;--pink:#b45461;--yellow:#f9e4b5;--green:#e6f0dd}
+body{background:linear-gradient(135deg,#fffaf3,#fff5f2 55%,#f6faef)}
+header{border-bottom-color:#ebded1;gap:18px;flex-wrap:wrap}
+.growing-tagline{display:inline-flex;align-items:baseline;background:transparent;padding:4px 0;font-size:15px;color:#805c47;white-space:nowrap;letter-spacing:.03em}
+.growing-tagline span{display:inline-block}
+.intro h1 span{background:linear-gradient(transparent 72%,#f7dfa9 72%)}
+.input-card{border-color:#ecddd2;box-shadow:0 12px 36px #90674809}
+.companion{background:radial-gradient(ellipse at 50% 55%,#fff8e7 0%,#f9eddf 72%);border-color:#efdeca}
+.speech{background:#fffaf4;border-color:#e8d2c1;color:#795043}.spark{color:#c59b66}
+.daily article{background:#fff0df;border-color:#ecdac8}.daily article:last-child{background:#edf3e3;border-color:#dce6cc}
+textarea{background:#fffcf8}.chip{background:#fff9f2;border-color:#e8d9cc}
+@media(max-width:700px){.growing-tagline{font-size:13px}.intro p{line-height:1.9}}
+@media(max-width:380px){.growing-tagline{font-size:12px}}
+
+.input-method{font-size:14px;font-weight:800;margin:20px 0 7px;color:#775149}
+.method-help{font-size:13px;line-height:1.75;color:#7a675e;margin:6px 0 10px}
+textarea{margin-top:3px;min-height:130px}.examples{margin:12px 0;gap:9px}
+.chip{min-height:40px;font-size:14px}.chip[aria-pressed="true"]{background:#f4dfe5;border-color:#ad526c;color:#773446;box-shadow:inset 0 0 0 1px #ad526c}
+.more-feelings{margin:12px 0 18px}.more-feelings summary{cursor:pointer;color:#81525e;font-size:14px;padding:8px 0}.more-feelings summary:focus-visible{outline:3px solid #8a3580;outline-offset:3px}
+
+.convert-help{margin-top:20px}.companion{align-self:start;position:sticky;top:20px;min-height:470px}
+@media(max-width:700px){.companion{position:relative;top:auto;min-height:260px}}
+
+/* Warm message cards with supplied transparent character artwork. */
+.daily{grid-template-columns:1fr 1fr;gap:22px;margin:32px 0}
+.daily article{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) 125px;align-items:center;gap:12px;padding:26px 22px;min-height:310px;border:1px solid #eed6b6;border-radius:28px;box-shadow:0 10px 28px #8c633c0a;background:linear-gradient(135deg,#fff5da,#ffe8d9)}
+.daily article:last-child{background:linear-gradient(135deg,#f1f7dc,#e4f2e4);border-color:#d5e3c4}
+.daily-copy{position:relative;z-index:1;min-width:0}.daily-kicker{font-size:11px;letter-spacing:.1em;color:#856443;font-weight:700;margin-bottom:14px}
+.daily h2{display:block;line-height:1.8;font-size:14px;margin:0 0 12px;color:#715644}.daily h2 #date{display:inline-block;margin-left:7px;font-size:12px}
+.daily p,.daily article:last-child p{font-size:clamp(17px,1.8vw,21px);font-weight:800;line-height:1.95;overflow-wrap:anywhere}
+.daily-signoff{display:block;margin-top:20px;font-size:12px;color:#756859;line-height:1.8}
+.daily-art{position:relative;align-self:end;width:125px;aspect-ratio:290 / 430;overflow:hidden;animation:message-float 3.6s ease-in-out infinite;transform-origin:50% 85%;margin-bottom:10px}
+.daily-art img{position:absolute;max-width:none;width:576.551725%;height:auto;left:-282.758621%;top:0}
+.daily-art-cheer{aspect-ratio:280 / 430;animation-delay:-1.8s}
+.daily-art-cheer img{width:597.142857%;left:-497.142857%;top:-110.465116%}
+.card-spark{position:absolute;right:29px;top:21px;font-size:32px;color:#bd8d51;opacity:.55;z-index:-1}.advice-card .card-spark{color:#7c9e6a}
+@keyframes message-float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-12px) rotate(1deg)}}
+@media(max-width:850px){.daily{grid-template-columns:1fr}.daily article{grid-template-columns:minmax(0,1fr) 145px;min-height:270px}.daily-art{width:145px}.daily p,.daily article:last-child p{font-size:20px}}
+@media(max-width:420px){.daily article{grid-template-columns:minmax(0,1fr) 105px;padding:22px 17px;gap:10px}.daily-art{width:105px}.daily p,.daily article:last-child p{font-size:17px}.daily-kicker{font-size:10px;letter-spacing:.04em}}
+@media(prefers-reduced-motion:reduce){.daily-art,.portrait{animation:none!important;transform:none!important}}
+
+/* Unified vitamin branding; motion applies to the whole HTML tagline only. */
+.logo{font-family:"Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:clamp(24px,3vw,30px);font-weight:900;letter-spacing:-.04em;color:#a73d50;line-height:1.6}
+.logo b{display:inline-grid;place-items:center;background:#ffe4be;color:#a84b13;border-radius:50%;width:1.25em;height:1.25em;font-size:.8em;box-shadow:0 3px 0 #efc99e;margin-right:3px}
+.logo-vitamin{color:#a84b13;display:inline-block;font-size:.84em;letter-spacing:.01em}
+header{padding-top:32px;padding-bottom:28px;column-gap:24px;row-gap:26px}
+.growing-tagline{position:relative;flex-shrink:0;transform-origin:center center;animation:tagline-float 3.6s ease-in-out infinite;color:#8b4b36;text-shadow:0 2px 2px #b76b4310;margin:0 8px;max-width:calc(100% - 16px)}
+@keyframes tagline-float{
+ 0%,100%{transform:translateY(0) rotate(-1deg) scale(1);text-shadow:0 2px 2px #b76b4310}
+ 50%{transform:translateY(-12px) rotate(1deg) scale(1.025);text-shadow:0 6px 8px #b76b432b}
+}
+.daily article{grid-template-columns:minmax(0,1fr) 115px;column-gap:14px}
+.daily-copy{display:contents}
+.daily-kicker{grid-column:1 / -1;margin-bottom:0}
+.daily h2{grid-column:1 / -1;justify-self:start;font-family:"Hiragino Maru Gothic ProN","Yu Gothic",Meiryo,sans-serif;font-size:clamp(20px,2vw,23px);font-weight:900;line-height:1.65;color:#a23448;background:#ffe1e5;border:1px solid #efb6bf;border-radius:18px;padding:10px 15px;margin:0 0 6px;max-width:100%;overflow-wrap:anywhere;letter-spacing:.01em}
+.daily .advice-card h2{color:#9a430c;background:#ffe6c5;border-color:#e9c28c}
+.daily h2 #date{color:#8b5360;font-weight:600;font-size:13px;margin-left:8px;white-space:nowrap}
+.daily p{grid-column:1;grid-row:3;margin:0;align-self:center}
+.daily-signoff{grid-column:1;grid-row:4;margin-top:4px}
+.daily-art{grid-column:2;grid-row:3 / 5;width:115px}
+@media(max-width:850px){.daily article{grid-template-columns:minmax(0,1fr) 145px}.daily-art{width:145px}}
+@media(max-width:420px){header{padding:28px 18px 22px;row-gap:24px}.logo{font-size:24px}.daily article{grid-template-columns:minmax(0,1fr) 105px}.daily-art{width:105px}.daily h2{font-size:20px;padding:9px 12px;border-radius:16px}.growing-tagline{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.growing-tagline{animation:none!important;transform:none!important;text-shadow:0 2px 2px #b76b4310}}
+.result-foot[hidden]{display:none}
+
+/* Bright, rounded lettering; individual sizes remain intact. */
+.growing-tagline{font-family:"Arial Rounded MT Bold","Hiragino Maru Gothic ProN","Meiryo",sans-serif;font-weight:900;color:#ad3f16;background:linear-gradient(115deg,#fff0ac,#ffe0c5 55%,#ffdce4);border:1px solid #efb999;border-radius:999px;padding:12px 15px;letter-spacing:.025em;box-shadow:0 4px 0 #eabe973d;box-sizing:border-box;font-size:15px;animation:vitamin-pop-float 3.6s ease-in-out infinite}
+.growing-tagline span:nth-child(3n+2){color:#b12e55}.growing-tagline span:nth-child(3n){color:#a44808}
+@keyframes vitamin-pop-float{0%,100%{transform:translateY(0) rotate(-1deg) scale(1);text-shadow:0 1px 0 #ffffffaa;box-shadow:0 4px 8px #b16d4317}50%{transform:translateY(-12px) rotate(1deg) scale(1.02);text-shadow:0 3px 5px #9e542522;box-shadow:0 10px 18px #b16d4328}}
+.reframe-layout{display:grid;grid-template-columns:minmax(0,1fr) 155px;gap:24px;align-items:center;margin-top:16px;padding:12px 18px;background:linear-gradient(120deg,#fffaf0,#fff1ec);border-radius:22px}
+.reframe-copy{min-width:0}.reframe-copy .ack{margin-top:0}.reframe-copy .positive{margin-bottom:0}
+.reframe-art{position:relative;width:155px;aspect-ratio:270 / 430;overflow:hidden;animation:reframe-float 3.6s ease-in-out infinite;transform-origin:center 75%;--reframe-x:-1.85185%;--reframe-y:0%}
+.reframe-art img{position:absolute;width:619.25926%;max-width:none;height:auto;left:var(--reframe-x);top:var(--reframe-y)}
+.result-foot{margin-top:18px}
+@keyframes reframe-float{0%,100%{transform:translateY(0) rotate(-1deg) scale(1);filter:drop-shadow(0 2px 2px #8c624513)}50%{transform:translateY(-12px) rotate(1deg) scale(1.02);filter:drop-shadow(0 7px 5px #8c624526)}}
+@media(max-width:700px){.growing-tagline{font-size:12px;padding:10px 12px}.reframe-layout{grid-template-columns:minmax(0,1fr) 110px;gap:12px;padding:18px 12px}.reframe-art{width:110px}}
+@media(max-width:380px){.growing-tagline{font-size:11px;padding:10px}.reframe-layout{grid-template-columns:1fr}.reframe-art{justify-self:center;width:120px}}
+@media(prefers-reduced-motion:reduce){.growing-tagline,.reframe-art{animation:none!important;transform:none!important}.reframe-art{filter:none}.growing-tagline{text-shadow:0 1px 0 #ffffffaa;box-shadow:0 4px 8px #b16d4317}}
+
+/* Primary title only: a single animated HTML text group. */
+.logo{display:inline-flex;align-items:baseline;justify-content:center;gap:0;flex:0 0 auto;white-space:nowrap;max-width:100%;margin:12px 4px 8px;padding:4px 5px;font-family:"Arial Rounded MT Bold","Hiragino Maru Gothic ProN","Meiryo",sans-serif;font-size:clamp(32px,4.8vw,54px);font-weight:900;line-height:1.55;letter-spacing:-.055em;color:#bf3758;text-shadow:1px 0 #fff,-1px 0 #fff,0 1px #fff,0 -1px #fff,0 3px 0 #f3c3ab,0 6px 10px #a45e3220;transform-origin:center center;animation:title-vitamin-float 3.6s ease-in-out infinite}
+.logo .logo-vitamin{font-size:1em;letter-spacing:-.065em;color:#bc510e}
+.logo b{align-self:center;flex-shrink:0;font-size:.54em;width:1.3em;height:1.3em;margin-right:.25em;color:#97530a;background:#ffe27d;box-shadow:0 3px 0 #edc85c;text-shadow:none}
+@keyframes title-vitamin-float{0%,100%{transform:translateY(0) rotate(-.7deg) scale(1);filter:drop-shadow(0 2px 1px #a7683a0d)}50%{transform:translateY(-12px) rotate(.7deg) scale(1.018);filter:drop-shadow(0 6px 4px #a7683a22)}}
+@media(max-width:700px){.logo{font-size:clamp(28px,6.7vw,43px);margin:12px 2px 8px;padding:4px 2px}}
+@media(max-width:380px){.logo{font-size:clamp(24px,6.8vw,28px)}}
+@media(prefers-reduced-motion:reduce){.logo{animation:none!important;transform:none!important;filter:drop-shadow(0 2px 1px #a7683a0d)}}
+
+/* Soft yellow for the reframe section. */
+.result{background:#fff9e4;border-color:#eadfbf}
+.reframe-layout{background:#fff9e4}
+
+#result-title{background:#fff2c9;border:1px solid #d9b96f;border-radius:18px;padding:10px 15px;color:#79551f;font-weight:900;line-height:1.65;max-width:100%;box-sizing:border-box}
+#result-title span{background:#ffe4a1;flex-shrink:0}
+
+.result{position:relative;isolation:isolate;overflow:hidden}
+.reframe-sparkles{position:absolute;inset:0;z-index:-1;pointer-events:none;user-select:none;color:#cfab53}
+.reframe-sparkles span{position:absolute;line-height:1;opacity:.38}
+.reframe-sparkles span:nth-child(1){right:7%;top:17px;font-size:24px}
+.reframe-sparkles span:nth-child(2){right:22%;top:34px;font-size:17px;transform:rotate(12deg)}
+.reframe-sparkles span:nth-child(3){left:7px;top:46%;font-size:19px}
+.reframe-sparkles span:nth-child(4){left:31%;bottom:8px;font-size:14px;opacity:.26}
+.reframe-sparkles span:nth-child(5){right:14px;bottom:16px;font-size:25px;transform:rotate(-10deg)}
+@media(max-width:480px){.reframe-sparkles span:nth-child(1){right:12px;top:7px;font-size:17px}.reframe-sparkles span:nth-child(2){display:none}}
+
+.reframe-sparkles span:nth-child(6){right:15%;top:12px;font-size:29px;opacity:.34}
+.reframe-sparkles span:nth-child(7){left:14px;bottom:22px;font-size:17px;opacity:.4}
+.reframe-sparkles span:nth-child(8){left:16%;bottom:7px;font-size:20px;transform:rotate(15deg)}
+.reframe-sparkles span:nth-child(9){right:39%;bottom:7px;font-size:22px;opacity:.3}
+.reframe-sparkles span:nth-child(10){right:29%;top:12px;font-size:31px;opacity:.5}
+.reframe-sparkles span:nth-child(11){right:9px;top:48%;font-size:31px;opacity:.45}
+@media(max-width:480px){.reframe-sparkles span:nth-child(6){right:19%;top:5px;font-size:18px}.reframe-sparkles span:nth-child(10){display:none}}
+
+.daily-art{aspect-ratio:270 / 430}
+.daily-art img{width:619.25926%;left:var(--reframe-x);top:var(--reframe-y)}
+
+footer .gentle-closing{font-size:16px;line-height:2;color:#815e54;margin:12px 0 16px;font-weight:600}
+
+footer .gentle-closing{font-family:"Arial Rounded MT Bold","Hiragino Maru Gothic ProN","Meiryo",sans-serif;font-size:clamp(15px,2.2vw,19px);font-weight:800;color:#b44761;line-height:2;letter-spacing:.015em}
+
+footer .gentle-closing{line-height:1.55;margin-bottom:14px}
+.marika-farewell{display:flex;align-items:center;justify-content:center;gap:22px;max-width:600px;margin:0 auto 20px;padding:8px 12px}
+.marika-note{font-size:14px;line-height:1.55;color:#906373;text-align:left;min-width:0;overflow-wrap:anywhere}
+.marika-signature{display:inline-block;margin-top:8px;font-weight:700;color:#a34560}
+.daily-marika{position:relative;flex:0 0 110px;width:110px;aspect-ratio:270 / 430;overflow:hidden}
+.daily-marika img{position:absolute;width:619.25926%;max-width:none;height:auto;left:var(--marika-x,-515.555556%);top:var(--marika-y,-110.465116%)}
+@media(max-width:480px){.marika-farewell{flex-direction:column;gap:8px;padding:4px 0}.marika-note{text-align:center;font-size:13px}.daily-marika{flex-basis:auto;width:105px}footer .gentle-closing{font-size:15px;letter-spacing:0}}
+
+/* Fixed clipped canvas keeps the expanding heart out of document layout. */
+.marika-farewell{position:relative;isolation:isolate}
+
+
+
+
+@media(prefers-reduced-motion:reduce){}
+
+/* Shared heart behind both cards, fading toward the top. */
+.daily{position:relative;isolation:isolate;padding-top:30px}
+
+
+
+@media(max-width:850px){.daily{padding-top:20px}}
+
+/* Heart reaches its full width at the closing message, fading upward. */
+.daily{padding-top:0}
+footer{position:relative;isolation:isolate}
+
+@media(max-width:700px){}
+
+/* Standalone replacement asset: preserve full image and intrinsic proportions. */
+.daily-marika{aspect-ratio:1 / 1}
+.daily-marika img{position:absolute;inset:0;width:100%;height:100%;max-width:100%;object-fit:contain}
+
+/* Larger cup-holding Marika, with reserved space in each layout. */
+.daily-marika{width:165px;flex:0 0 165px}
+
+
+
+
+@media(max-width:700px){}
+@media(max-width:480px){.daily-marika{width:155px;flex-basis:auto}}
+@media(max-width:380px){}
+
+/* A single decorative heart, behind the stationary footer character only. */
+.daily-marika{isolation:isolate;overflow:visible}
+.daily-marika img{z-index:1}
+.marika-bloom-window{position:absolute;left:50%;top:50%;width:100vw;height:100vmax;transform:translate(-50%,-50%);clip-path:inset(0);overflow:clip;pointer-events:none;z-index:0}
+.marika-bloom-heart{position:absolute;left:50%;top:50%;display:block;width:1em;height:1em;text-align:center;font-family:Arial,sans-serif;font-size:130px;line-height:1;color:#edb7cb;transform-origin:center;opacity:0;animation:marika-gentle-bloom 16s ease-in-out infinite}
+/* Clipping prevents the transformed decoration from creating scrollable overflow. */
+footer{overflow-x:clip}
+@keyframes marika-gentle-bloom{
+ 0%{transform:translate(-50%,-50%) scale(.9);opacity:0}
+ 10%{transform:translate(-50%,-50%) scale(1.05);opacity:.3}
+ 52%{transform:translate(-50%,-50%) scale(var(--marika-wide-scale,8));opacity:.08}
+ 82%{transform:translate(-50%,-50%) scale(2.2);opacity:.025}
+ 94%,100%{transform:translate(-50%,-50%) scale(2.2);opacity:0}
+}
+@media(max-width:480px){.marika-bloom-heart{font-size:120px}}
+@media(prefers-reduced-motion:reduce){.marika-bloom-heart{animation:none!important;opacity:0}.marika-bloom-window{display:none!important}}
+
+.feeling-group{border:0;padding:0;margin:17px 0}.feeling-group legend{font-size:14px;font-weight:800;color:#81534c}.feeling-group .examples{margin:8px 0}.feeling-group:nth-of-type(1) .chip{background:#fff3db}.feeling-group:nth-of-type(2) .chip{background:#eef3e8}#result-title #result-heading{display:inline;background:transparent;width:auto;height:auto;border-radius:0;font-size:inherit;flex-shrink:1}
+.role-label{display:inline-block;margin:0 0 4px;padding:4px 10px;border-radius:999px;background:#fff0c9;color:#8a5d27;font-size:13px;font-weight:800;letter-spacing:.03em}
+.ack::before{content:"今の気持ちに一言";display:block;margin-bottom:6px;color:#8a5d27;font-size:13px;font-weight:800;letter-spacing:.03em}
+</style>
+</head>
+<body>
+<header><div class="logo"><b aria-hidden="true">✳</b> ポジっと！<span class="logo-vitamin">ビタミン</span></div><span class="badge growing-tagline" aria-label="こころに、ひとさじのビタミン"><span aria-hidden="true" style="font-size:0.850em">こ</span><span aria-hidden="true" style="font-size:0.868em">こ</span><span aria-hidden="true" style="font-size:0.886em">ろ</span><span aria-hidden="true" style="font-size:0.904em">に</span><span aria-hidden="true" style="font-size:0.922em">、</span><span aria-hidden="true" style="font-size:0.940em">ひ</span><span aria-hidden="true" style="font-size:0.958em">と</span><span aria-hidden="true" style="font-size:0.976em">さ</span><span aria-hidden="true" style="font-size:0.994em">じ</span><span aria-hidden="true" style="font-size:1.012em">の</span><span aria-hidden="true" style="font-size:1.030em">ビ</span><span aria-hidden="true" style="font-size:1.048em">タ</span><span aria-hidden="true" style="font-size:1.066em">ミ</span><span aria-hidden="true" style="font-size:1.084em">ン</span></span></header>
+<main>
+<section class="intro"><div><div class="eyebrow">A LITTLE SHIFT, A LITTLE LIGHT.</div><h1>どんな日にも、<span>こころのビタミン。</span></h1><p>うれしい日も、普通の日も、ちょっと疲れた日も。今の気持ちを聞かせてね。</p></div></section>
+<div class="workspace">
+<form class="input-card" id="form" autocomplete="off"><div class="step"><span>01</span>いま、どんな気持ち？</div><input type="hidden" id="feeling" value=""><section class="choice-section" aria-labelledby="choice-heading"><h2 id="choice-heading" class="input-method">ボタンで気持ちを選ぶ</h2><p class="method-help">うれしい日も、普通の日も。今の気持ちに近いボタンを選んでね。</p><fieldset class="feeling-group"><legend>うれしい・心地よい</legend><div class="examples"><button class="chip" type="button" data-example="うれしい" aria-pressed="false">うれしい</button><button class="chip" type="button" data-example="楽しい" aria-pressed="false">楽しい</button><button class="chip" type="button" data-example="幸せ" aria-pressed="false">幸せ</button><button class="chip" type="button" data-example="わくわく" aria-pressed="false">わくわく</button><button class="chip" type="button" data-example="やる気がある" aria-pressed="false">やる気がある</button><button class="chip" type="button" data-example="自信がある" aria-pressed="false">自信がある</button><button class="chip" type="button" data-example="感謝している" aria-pressed="false">感謝している</button><button class="chip" type="button" data-example="穏やか" aria-pressed="false">穏やか</button><button class="chip" type="button" data-example="ほっとしている" aria-pressed="false">ほっとしている</button></div></fieldset><fieldset class="feeling-group"><legend>普通・ニュートラル</legend><div class="examples"><button class="chip" type="button" data-example="普通" aria-pressed="false">普通</button><button class="chip" type="button" data-example="まあまあ" aria-pressed="false">まあまあ</button><button class="chip" type="button" data-example="のんびり" aria-pressed="false">のんびり</button><button class="chip" type="button" data-example="何となく" aria-pressed="false">何となく</button><button class="chip" type="button" data-example="ぼんやり" aria-pressed="false">ぼんやり</button><button class="chip" type="button" data-example="考え中" aria-pressed="false">考え中</button><button class="chip" type="button" data-example="ひと休みしたい" aria-pressed="false">ひと休みしたい</button></div></fieldset><fieldset class="feeling-group"><legend>少し元気がほしい</legend><div class="examples"><button class="chip" type="button" data-example="ちょっと疲れた" aria-pressed="false">ちょっと疲れた</button><button class="chip" type="button" data-example="やる気が出ない" aria-pressed="false">やる気が出ない</button><button class="chip" type="button" data-example="焦っている" aria-pressed="false">焦っている</button><button class="chip" type="button" data-example="自信がない" aria-pressed="false">自信がない</button></div></fieldset><fieldset class="feeling-group"><legend>不安・悲しさを感じる</legend><div class="examples"><button class="chip" type="button" data-example="寂しい" aria-pressed="false">寂しい</button><button class="chip" type="button" data-example="心配" aria-pressed="false">心配</button><button class="chip" type="button" data-example="不安" aria-pressed="false">不安</button><button class="chip" type="button" data-example="悲しい" aria-pressed="false">悲しい</button><button class="chip" type="button" data-example="落ち込んでいる" aria-pressed="false">落ち込んでいる</button><button class="chip" type="button" data-example="失敗しちゃった" aria-pressed="false">失敗しちゃった</button></div></fieldset><details class="more-feelings"><summary>ほかの気持ちから選ぶ</summary><div class="examples"><button class="chip" type="button" data-example="次の一歩が怖い" aria-pressed="false">怖いな</button><button class="chip" type="button" data-example="今の状況に危険を感じる" aria-pressed="false">危険を感じる</button><button class="chip" type="button" data-example="孤独で、ひとりぼっちに感じる" aria-pressed="false">ひとりぼっち</button><button class="chip" type="button" data-example="自分だけ置き去りにされそう" aria-pressed="false">置いていかれそう</button><button class="chip" type="button" data-example="いろいろ重なってしんどい" aria-pressed="false">しんどい</button><button class="chip" type="button" data-example="やることが面倒で手がつかない" aria-pressed="false">面倒だな</button><button class="chip" type="button" data-example="一人で抱える負担が大きい" aria-pressed="false">負担が大きい</button><button class="chip" type="button" data-example="自分の気持ちを我慢している" aria-pressed="false">我慢ばかり</button><button class="chip" type="button" data-example="今のやり方ではもう無理だと思う" aria-pressed="false">もう無理かも</button><button class="chip" type="button" data-example="やりたいことがうまくできない" aria-pressed="false">うまくできない</button><button class="chip" type="button" data-example="どうせ私には難しいと思ってしまう" aria-pressed="false">どうせ私なんて</button><button class="chip" type="button" data-example="頑張った時間が無駄だった気がする" aria-pressed="false">無駄だったかも</button><button class="chip" type="button" data-example="もう手遅れかもしれない" aria-pressed="false">手遅れかも</button><button class="chip" type="button" data-example="必要なものが足りない気がする" aria-pressed="false">足りない気がする</button><button class="chip" type="button" data-example="大切なものを失ったことがつらい" aria-pressed="false">大切なものを失った</button><button class="chip" type="button" data-example="損したことが悔しい" aria-pressed="false">損しちゃった</button><button class="chip" type="button" data-example="自分の欠点ばかり気になる" aria-pressed="false">欠点が気になる</button><button class="chip" type="button" data-example="思いどおりにならずイライラする" aria-pressed="false">イライラする</button><button class="chip" type="button" data-example="起きたことについて自分を責めてしまう" aria-pressed="false">自分を責めちゃう</button><button class="chip" type="button" data-example="自分の希望を聞かずに押しつけられる" aria-pressed="false">押しつけられる</button><button class="chip" type="button" data-example="望んでいないことを強制されている" aria-pressed="false">強制されている</button><button class="chip" type="button" data-example="涙が出そうで泣きたい" aria-pressed="false">泣きたい</button></div></details></section><p class="method-help convert-help">気持ちを選んだら、下のボタンを押してね。</p><button class="convert" type="submit">✦ こころのビタミンを受け取る</button><p id="error" class="error" role="alert"></p><p class="small-note">選んだ気持ちは、保存・送信されません。</p></form>
+<aside class="companion" aria-label="応援するキャラクター"><div class="speech" id="speech">今日は、今日のペースで。</div><span class="spark" aria-hidden="true">✧</span><div class="portrait" id="portrait"><img id="character" src="./character-transparent.png" alt="ピンクのサングラスをかけ、笑顔で両手を広げる女の子" width="1672" height="941"></div><span class="spark two" aria-hidden="true">✳</span><small>YOUR LITTLE CHEERLEADER</small><p id="mood-caption" class="mood-caption">言葉に合わせて表情が変わります。</p></aside>
+</div>
+<section id="result" class="result" tabindex="-1" aria-labelledby="result-title"><div class="reframe-sparkles" aria-hidden="true"><span>✦</span><span>☆</span><span>✧</span><span>✦</span><span>☆</span><span>✧</span><span>✦</span><span>☆</span><span>✧</span><span>·</span><span>·</span></div><div class="step" id="result-title"><span>02</span><span id="result-heading">こんな見方も、できるかも。</span></div><div class="reframe-layout"><div class="reframe-copy"><p id="ack" class="ack">気持ちを選んで「こころのビタミンを受け取る」を押すと、ここに新しい見方をお届けします。</p><p id="positive" class="positive"></p></div><div class="reframe-art" id="reframe-art"><img id="reframe-character" src="./character-transparent.png" alt="穏やかな表情で寄り添う女の子" width="1672" height="941"></div></div><div class="result-foot" id="result-foot" hidden><p id="action"></p><button id="reset" class="reset" type="button">気持ちを選び直す</button></div></section>
+<section class="daily" aria-label="今日のメッセージとアドバイス">
+<article class="message-card"><div class="daily-copy"><div class="daily-kicker">A LITTLE SUNSHINE FOR YOU</div><h2>今日のビタミンメッセージ <span id="date"></span></h2><p id="daily-message"></p><span class="daily-signoff">今日のあなたに、やさしいエール。</span></div><div id="message-art" class="daily-art daily-art-happy" aria-hidden="true"><img src="./character-transparent.png" alt="" width="1672" height="941"></div><span class="card-spark" aria-hidden="true">✧</span></article>
+<article class="advice-card"><div class="daily-copy"><div class="daily-kicker">ONE SMALL STEP</div><h2>今日のビタミンアドバイス</h2><p id="daily-advice"></p><span class="daily-signoff">小さな一歩から、あなたのペースで。</span></div><div id="advice-art" class="daily-art daily-art-cheer" aria-hidden="true"><img src="./character-transparent.png" alt="" width="1672" height="941"></div><span class="card-spark" aria-hidden="true">✳</span></article>
+</section>
+</main>
+<footer><p class="gentle-closing">無理にポジティブにならなくても大丈夫<br>あなたのペースで</p><div class="marika-farewell" id="marika-farewell"><p class="marika-note">ポジっとマリカに会いにきたくなったら<br>いつでも来てね！<br>いつもあなたを応援してる<br>待ってるよ<br><span class="marika-signature">ポジマリちゃんより</span></p><div id="daily-marika" class="daily-marika"><div class="marika-bloom-window" aria-hidden="true"><span class="marika-bloom-heart">♥</span></div><img id="daily-marika-image" src="./energetic.png" alt="カップを持ってほほえむポジマリちゃん" width="1280" height="1280"></div></div><p>通信なし・保存なし ｜ 言葉に合わせた定型メッセージをお届けします。</p></footer>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+const rules = [
+{test:/死にたい|消えたい|自殺|自傷|生きていたくない|生きるのがつらい/,ack:'言葉にしてくれてありがとう。無理に前向きに変える必要はありません。',positive:'今は、あなたが安全に過ごせることがいちばん大切。ひとりで抱えず、誰かとつながってください。',action:'身近な信頼できる人に「今、ひとりでいるのがつらい」と伝えてみてください。差し迫った危険があるときは、地域の緊急窓口へ。'},
+{test:/いじめ|虐待|暴力|ハラスメント|殴ら/,ack:'つらい状況を、前向きに受け止め直さなくても大丈夫。',positive:'傷つけられることを我慢する必要はない。自分を守る選択をしていい。',action:'安全な場所で、信頼できる人に今の状況を話してみよう。'},
+{test:/疲|つかれ|しんど|休みたい|頑張りすぎ|がんばりすぎ|限界/,ack:'疲れたと感じているんだね。今の自分の声を大切にしよう。',positive:'休むことも、明日の自分を助ける一歩。\n今日は、頑張る量を少なくしていい。',action:'小さな一歩：飲み物を用意して、まずは少し手を止めよう。'},
+{test:/失敗|ミス|間違|まちが|うまくいか|上手くいか|できな|出来な/,ack:'うまくいかないと、落ち込むこともあるよね。',positive:'ひとつの失敗で、私の価値は決まらない。\n次に試す方法を、ひとつずつ見つけていこう。',action:'小さな一歩：次に変えられそうなことを、ひとつだけ考えよう。'},
+{test:/比べ|比較|自信|劣等|ダメ|だめ|価値がない|嫌い|取り残/,ack:'自分に厳しい目を向けてしまう日もあるよね。',positive:'誰かのペースに、私を合わせなくていい。\n小さくても、私なりの一歩には意味がある。',action:'小さな一歩：今日できたことを、どんなに小さくてもひとつ数えよう。'},
+{test:/不安|心配|怖|こわ|緊張|将来/,ack:'先が見えないと、不安になることもあるよね。',positive:'今すぐ全部の答えを出さなくていい。\n今日できることから、少しずつ進めばいい。',action:'小さな一歩：今できることと、今は決めなくていいことを分けてみよう。'},
+{test:/怒|イライラ|いらいら|むかつ|ムカつ|腹が立|許せ/,ack:'腹が立つ気持ちにも、理由があるのかもしれないね。',positive:'この気持ちは、大切にしたいことに気づくヒント。\n落ち着いてから、どう伝えるか選んでいい。',action:'小さな一歩：返事をする前に、少しその場を離れてひと呼吸。'},
+{test:/寂|さみし|さびし|孤独|ひとり|一人|嫌われ|人間関係|友達/,ack:'人とのつながりで、心が揺れることもあるよね。',positive:'誰かの反応だけで、私の価値は決まらない。\n安心できる距離やつながりを、大切にしていい。',action:'小さな一歩：話しやすい人に、短いひとことを送ってみよう。'},
+{test:/悲し|つら|辛|泣|落ち込|落ちこ/,ack:'つらい気持ちを、ここに置いてくれてありがとう。',positive:'元気になれない日も、そのままの私でいい。\n今日は心をいたわることを、ひとつ選ぼう。',action:'小さな一歩：好きな音楽や温かい飲み物で、落ち着ける時間をつくろう。'}
+];
+const fallback={ack:'いまの気持ちを、言葉にできたね。すぐに答えを出さなくても大丈夫。',positive:'今の気持ちを否定せずに、\n自分に少しやさしい選択をしてみよう。',action:'小さな一歩：「今、どうしてほしい？」と自分に聞いてみよう。'};
+const messages=[['小さな一歩も、ちゃんと前進。','今日やることを、ひとつだけ決めてみよう。'],['あなたのペースに、まるをつけよう。','人と比べる代わりに、昨日の自分の頑張りをひとつ見つけよう。'],['休んだ時間も、あなたの味方。','肩の力を抜いて、ゆっくりひと呼吸。'],['完璧じゃない今日にも、いいところはある。','寝る前に、今日よかったことをひとつ思い出そう。'],['何度でも、小さく始めていい。','気になっていることに、まず2分だけ取り組もう。'],['あなたは、あなたにやさしくしていい。','親しい人にかける言葉を、自分にもかけてみよう。'],['今日は、今日のあなたで大丈夫。','「しなきゃ」をひとつ減らして、ひと息つこう。']];
+const topics=[{"id":0,"label":"不安","test":"不安","variants":["安心できることを一つずつ増やそう","先が見えなくても、確かめられることからで大丈夫","安心の手がかりは、小さく集めていけばいい"],"ack":"先が見えないと、落ち着かないこともあるよね","mood":"thinking","advice":[0,1,2]},{"id":1,"label":"怖い","test":"怖い|こわい|怖く","variants":["自分のペースで進んでいい","立ち止まることも、自分を守る選択だよ","怖さがあるままでも、安心できる距離を選んでいい"],"ack":"怖いと感じる自分を、責めなくていいよ","mood":"thinking","advice":[1,2,3]},{"id":2,"label":"心配","test":"心配","variants":["大切にしたいことがあるんだね","気がかりなことは、一つずつ確かめていこう","すべてを先回りしなくても、今できる備えでいい"],"ack":"気になって、考え続けてしまうこともあるよね","mood":"thinking","advice":[0,4,5]},{"id":3,"label":"危険","test":"危険|危ない|あぶない","variants":["安全を優先して選ぼう","危険から離れることを、何より先にしていい","一人で解決しようとせず、安全を守る助けを求めていい"],"ack":"危険だと感じることを、軽く扱わなくていいよ","mood":"neutral","advice":[27,28,29]},{"id":4,"label":"焦り","test":"焦り|焦る|焦って|あせる|あせり","variants":["一つずつ、着実に進もう","急ぐ気持ちがあっても、次の一歩だけ見ればいい","自分の歩幅を取り戻す時間があっていい"],"ack":"早く何とかしたくて、落ち着かないんだね","mood":"thinking","advice":[2,6,7]},{"id":5,"label":"悲しい","test":"悲しい|悲しく|悲しみ|かなしい","variants":["心をいたわる時間をとろう","悲しみを急いで手放さなくても大丈夫","元気になれない今日も、やさしく過ごしていい"],"ack":"悲しい気持ちは、そのままここに置いていいよ","mood":"sad","advice":[3,8,9]},{"id":6,"label":"寂しい","test":"寂しい|さびしい|さみしい","variants":["温かなつながりを求めていい","誰かと話したい気持ちを、大切にしていい","短いひとことから、つながりをつくっていこう"],"ack":"誰かにそばにいてほしい日もあるよね","mood":"sad","advice":[10,11,12]},{"id":7,"label":"孤独","test":"孤独|独りぼっち|ひとりぼっち","variants":["頼れる人や場所を見つけていこう","全部を一人で抱えなくてもいい","安心して話せる相手を、少しずつ探していい"],"ack":"一人で抱えている感じがすると、つらいよね","mood":"sad","advice":[10,11,12]},{"id":8,"label":"置き去り","test":"置き去り|取り残|おいていか|置いていか","variants":["自分の歩幅で進んでいい","誰かと同じ速さでなくても、あなたの道を進める","今いる場所から、一歩を選び直していい"],"ack":"周りが先に進んで見えると、心細いよね","mood":"sad","advice":[7,13,14]},{"id":9,"label":"疲れ","test":"疲れ|疲労|つかれ","variants":["頑張った自分に休息を","休む時間も、これからの自分を支えてくれる","今日は力を抜いて、自分を回復させよう"],"ack":"ここまで動いてきて、疲れがたまっているんだね","mood":"sad","advice":[3,8,15]},{"id":10,"label":"しんどい","test":"しんど|つらい|辛い","variants":["今は自分をいたわろう","頑張りを増やすより、つらさを減らしていい","今日は自分を守る過ごし方を選ぼう"],"ack":"しんどい気持ちを言葉にしてくれてありがとう","mood":"sad","advice":[3,9,15]},{"id":11,"label":"面倒","test":"面倒|めんどう|面倒くさ","variants":["もっと楽にできる方法を探そう","全部を丁寧にしなくても、簡単な形で始めていい","取りかかりやすい大きさまで、小さくしてみよう"],"ack":"気が重くて、手がつかないこともあるよね","mood":"thinking","advice":[6,16,17]},{"id":12,"label":"負担","test":"負担|重荷","variants":["分け合って、軽くしていこう","一人分を超えた荷物は、助けを借りていい","減らせることを見つけるのも、大切な工夫だよ"],"ack":"抱えていることが多いと、苦しくなるよね","mood":"sad","advice":[12,15,18]},{"id":13,"label":"我慢","test":"我慢|がまん","variants":["自分の気持ちも大切にしていい","言えなかった希望を、自分には認めてあげよう","つらさを飲み込む前に、距離をとってもいい"],"ack":"気持ちを抑えてきたんだね","mood":"sad","advice":[19,20,21]},{"id":14,"label":"無理","test":"無理|むり","variants":["今の自分に合う方法を選ぼう","引き受けないことも、自分を大切にする選択だよ","できる量に調整して、無理の少ない形にしよう"],"ack":"今のやり方では、苦しいと感じているんだね","mood":"thinking","advice":[15,18,20]},{"id":15,"label":"できない","test":"できない|出来ない|できなかった|出来なかった","variants":["できる形に小さくしてみよう","助けや道具を使って、自分に合う方法を探そう","今できないことが、あなたの価値を決めるわけではないよ"],"ack":"できなくて、もどかしくなることもあるよね","mood":"thinking","advice":[6,16,22]},{"id":16,"label":"どうせ","test":"どうせ","variants":["まだ別の可能性があるかもしれない","今の予想だけで、すべてを決めなくてもいい","期待できない日は、小さく試すだけでもいい"],"ack":"期待することに、疲れてしまう日もあるよね","mood":"thinking","advice":[17,22,23]},{"id":17,"label":"無駄","test":"無駄|むだ|ムダ","variants":["これからに役立つ気づきを探そう","今すぐ意味を見つけられなくても、経験は残っている","使った力を責めずに、次の選び方を考えよう"],"ack":"かけた時間や力が報われないと、つらいよね","mood":"thinking","advice":[13,23,24]},{"id":18,"label":"手遅れ","test":"手遅れ|遅すぎ","variants":["今からできることを見つけよう","変えられる部分に、今日の力を向けてみよう","間に合わなかった気持ちを抱えながら、次の一歩を選んでいい"],"ack":"もう遅いと感じると、苦しくなるよね","mood":"thinking","advice":[4,6,24]},{"id":19,"label":"足りない","test":"足りない|不足","variants":["必要なものを少しずつ整えよう","全部を一度にそろえなくても、必要な順でいい","足りないものと、すでにあるものを確かめてみよう"],"ack":"十分ではないと感じて、気がかりなんだね","mood":"thinking","advice":[4,14,18]},{"id":20,"label":"失う","test":"失う|失った|失って|なくした|喪失","variants":["大切なものを、これからも育んでいこう","失った悲しみを急がず、今ある支えを大切にしよう","大切だった気持ちは、そのまま持っていていい"],"ack":"失うことはつらいよね。簡単に切り替えなくていいよ","mood":"sad","advice":[8,9,11]},{"id":21,"label":"損","test":"損した|損する|損を|損$","variants":["次の選び方に生かそう","悔しさを受け止めてから、これからの選択を考えよう","一度の結果だけで、自分の判断すべてを責めなくていい"],"ack":"損をしたと感じると、悔しくなるよね","mood":"thinking","advice":[4,23,24]},{"id":22,"label":"欠ける","test":"欠ける|欠けて|欠点","variants":["自分にある良さにも目を向けよう","足りないところだけが、あなたのすべてではないよ","得意なことや支えを借りて、補っていけばいい"],"ack":"自分の足りないところが気になることもあるよね","mood":"shy","advice":[13,14,25]},{"id":23,"label":"怒り","test":"怒り|怒る|怒って|イライラ|いらいら|腹が立","variants":["大切にしたいことを確かめよう","怒りの奥にある希望を、落ち着いてから言葉にしよう","すぐに答えを出さず、自分を落ち着かせる時間を選んでいい"],"ack":"腹が立つ気持ちを、なかったことにしなくていいよ","mood":"angry","advice":[2,19,26]},{"id":24,"label":"責める","test":"責める|責められ|責めて","variants":["どうすればよくなるか考えよう","誰が悪いかだけでなく、変えられることを見つけよう","自分や誰かのすべてを否定せず、出来事を分けて考えよう"],"ack":"責める言葉が浮かぶほど、苦しいことがあったんだね","mood":"thinking","advice":[19,23,26]},{"id":25,"label":"押しつけ","test":"押しつけ|押し付け|おしつけ","variants":["お互いの希望を聞いてみよう","自分の希望も、同じように大切にしていい","話し合いが難しいときは、距離や助けを選んでいい"],"ack":"希望を聞いてもらえないと、苦しくなるよね","mood":"thinking","advice":[20,21,28]},{"id":26,"label":"強制","test":"強制|強要|無理やり|無理矢理","variants":["自分の意思を尊重していい","望まないことに、同意する必要はないよ","断りづらい状況なら、安全に助けを求める方法を選ぼう"],"ack":"自分の意思を押さえつけられるのは、つらいことだよ","mood":"neutral","advice":[20,28,29]}];
+const adviceBank=["安心できることを、今ひとつだけ確かめよう。","不安なことを「今できること」と「後で考えること」に分けよう。","ゆっくり息を吐いて、肩の力を抜いてみよう。","少し手を止めて、楽な姿勢で休もう。","確かめたいことを、一つだけ書き出してみよう。","考える時間に区切りをつけて、ひと息つこう。","次にすることを、一つだけ選ぼう。","周りの速さより、今日の自分の歩幅を大切に。","温かい飲み物で、ほっとする時間をつくろう。","好きな音や景色に、少し心を預けてみよう。","話しやすい人に、短いひとことを送ってみよう。","安心して話せる相手や場所を、一つ思い浮かべよう。","「ここを手伝ってほしい」と、小さく頼んでみよう。","今日できたことを、小さなことでも一つ数えよう。","すでに自分にあるものを、一つ見つけてみよう。","今日しなくてもよいことを、一つ減らそう。","やることを、2分でできる大きさに分けよう。","いちばん簡単な方法で、少しだけ試してみよう。","必要な助けや道具を、一つ考えてみよう。","「本当はどうしたかった？」と、自分に聞いてみよう。","「今は引き受けられない」と伝える選択もあるよ。","伝えたい希望を、短い一文にしてみよう。","できる人のやり方を、一つだけ借りてみよう。","起きた事実と、自分への評価を分けてみよう。","次に変えられそうなことを、一つだけ選ぼう。","大切な友人にかける言葉を、自分にもかけよう。","返事は少し待って、落ち着いてから選ぼう。","危険を感じる場所から、可能なら安全な場所へ離れよう。","相手と直接向き合うのが危険なら、信頼できる人や相談先を頼ろう。","差し迫った危険があるときは、地域の緊急窓口に助けを求めてね。"];
+
+const rotation=new Map();let personalMessageShown=false;
+function rotate(key,items){const n=rotation.has(key)?rotation.get(key)+1:Math.floor(Math.random()*items.length);rotation.set(key,n);return items[n%items.length];}
+function contextText(value){return value.normalize('NFKC').replace(/不安(?:は|が)?ない|心配(?:は|が)?ない|怖くない|危険(?:は|が)?ない|危険ではない|強制(?:は)?されていない|強制ではない|無理(?:は|を)?しない|無駄ではない|できないわけではない/g,'');}
+function matchingTopic(value){const t=contextText(value);const matches=topics.filter(topic=>new RegExp(topic.test).test(t));const safe=matches.find(topic=>topic.label==='危険')||matches.find(topic=>topic.label==='強制');if(safe)return safe;return matches.sort((a,b)=>{const index=x=>Math.max(...Array.from(t.matchAll(new RegExp(x.test,'g')),m=>m.index));return index(b)-index(a)})[0];}
+const everydayMoods=[["joy","うれしい","うれし(?!くない)|嬉し(?!くない)","happy","そのうれしい気持ち、大切にしたいね。",["今日の喜びに、名前をつけてみよう。思い出す楽しみが一つ増えるね。","うれしかった場面を、写真や言葉で残すのもいいね。今日ならではの宝物になるよ。"],"今日の喜びを一つ、覚えておこう。"],["fun","楽しい","楽しい|楽しかった","laughing","楽しい時間を過ごしているんだね。",["夢中で過ごした時間には、あなたの「好き」が詰まっているね。","楽しかったことを誰かと話すと、その時間をもう一度味わえるね。"],"今日いちばん楽しかった場面を思い出してみよう。"],["happyday","幸せ","幸せ(?!じゃない|ではない)|しあわせ","affection","幸せを感じられる今日って素敵だね。",["今ある幸せを、五感で味わってみよう。香りや音も、今日の思い出になる。","いつもの景色が、今日は少し特別に見えるね。その感覚をゆっくり楽しもう。"],"その幸せをゆっくり味わってみよう。"],["excited","わくわく","わくわく|ワクワク|楽しみ","wink","いいね、そのわくわくを楽しもう。",["まだ知らないことに心が動いているね。「知りたい」は、楽しみの入り口。","待ち遠しい予定があると、その日までの時間も楽しめるね。"],"楽しみにしていることの準備を一つしてみよう。"],["motivated","やる気がある","やる気がある|やる気が出て|意欲がある","energetic","やってみたい気持ちが湧いているんだね。",["心が動いた今、試してみたいことを選べるね。まずは面白そうなところから。","ひらめきを形にする楽しさを味わおう。完成までの工夫も、あなたの作品だよ。"],"取りかかりたいことを、一つ選んでみよう。"],["confident","自信がある","自信がある|自信を持てた|自信がついた","wink","自分を信じられる感覚、いいね。",["手応えを感じたやり方は、あなたの力になっているね。次にも使える発見だよ。","できたと感じる今の自分に、拍手を送ろう。その喜びを受け取っていい。"],"うまくいった工夫を一つ覚えておこう。"],["thankful","感謝している","感謝|ありがとう","affection","ありがとうと思える出来事があったんだね。",["受け取ったやさしさを思い出すと、何げない一日にも温かさが見つかるね。","伝えたい「ありがとう」があるんだね。あなたの言葉で届く温かさがあるよ。"],"伝えたい相手がいたら、ありがとうをひとこと。"],["calm","穏やか","穏やか|おだやか","relax","穏やかに過ごせているんだね。",["静かな時間には、小さな音や季節の変化がよく似合うね。","何かを足さなくても、心地よい今があるね。この穏やかさをそのまま楽しもう。"],"窓の外や身の回りに、季節を一つ見つけよう。"],["relieved","ほっとしている","ほっと|ホッと|安心した|安心している","relax","ほっとできたんだね。",["気がかりがほどけた今、体も少しゆるめてみよう。安心をゆっくり感じていい。","一区切りついた時間に、小さなお祝いを添えよう。好きな一杯が似合いそうだね。"],"お気に入りの飲み物で、一区切りを味わおう。"],["ordinary","普通","普通|ふつう","neutral","普通の日も、大切な一日だね。",["特別な出来事がなくても、今日という時間がある。それだけでいい日もあるね。","いつもどおりの一日なんだね。特別な理由を探さず、そのまま過ごしていい。"],"今日はいつもどおりで大丈夫。"],["okay","まあまあ","まあまあ|そこそこ","neutral","まあまあ、くらいの日もあるよね。",["「まあまあ」が、今のちょうどいい答えなんだね。点数をつけ足さなくていいよ。"],"今の感じを、変えようとしなくていいよ。"],["leisure","のんびり","のんびり","relax","のんびりした時間、いいね。",["急がない時間には、寄り道の余白があるね。気の向くままに過ごしてみよう。"],"予定を決めずに過ごす時間があってもいいね。"],["vague","何となく","何となく|なんとなく","neutral","何となく、で開いてくれていいんだよ。",["はっきりした気分がなくても、ここにいていい。言葉を探さず過ごす時間もあるね。"],"気持ちに名前がつかないままでも大丈夫。"],["spaced","ぼんやり","ぼんやり","relax","ぼんやりしているんだね。",["考えがまとまらない時間も、そのままでいい。目に入る色を眺めるだけでも。"],"遠くを眺めて、目を少し休めよう。"],["reflecting","考え中","考え中|考えている|考えごと","ponder","今、考えを巡らせているんだね。",["考えの途中には、まだいろいろな道があるね。結論より、浮かんだことを置いておこう。"],"思いついたことを短い言葉で並べてみよう。"],["pause","ひと休みしたい","ひと休み|一休み|ひとやすみ","sleepy","ひと休みしたいんだね。",["休憩を選べるのも、自分のリズムの一つ。区切りの時間を心地よく過ごそう。"],"手を止めて、楽な姿勢になってみよう。"]];
+
+function everydayMood(value){
+ const text=contextText(value).replace(/うれしくない|嬉しくない|楽しくない|幸せじゃない|幸せではない|自信があるわけではない|やる気があるわけではない/g,'');
+ if(rules.slice(0,2).some(r=>r.test.test(text)))return null;
+ const candidates=everydayMoods.filter(d=>new RegExp(d[2]).test(text));
+ if(!candidates.length)return null;
+ // Remove affirmative phrases before checking remaining difficult emotions.
+ let rest=text;for(const d of candidates)rest=rest.replace(new RegExp(d[2],'g'),'');
+ if(matchingTopic(rest)||rules.slice(2).some(r=>r.test.test(rest))||/やる気が出ない/.test(rest))return null;
+ return candidates.sort((a,b)=>text.search(new RegExp(b[2]))-text.search(new RegExp(a[2])))[0];
+}
+
+function responseFor(value){
+ const everyday=everydayMood(value);
+ if(everyday){const daily=rotate('everyday-'+everyday[0],everyday[5]);return {ack:everyday[4],positive:daily,daily,advice:everyday[6],action:everyday[6],everydayKey:everyday[0]};}
+ if(/やる気が出ない|やる気がない/.test(value)&&!rules.slice(0,2).some(r=>r.test.test(value))&&!/危険|強制|強要/.test(value)){return {ack:'気持ちが動かない日もあるよね。',positive:'今すぐ何かを始めなくても大丈夫。自分が楽に過ごせる形を選ぼう。',daily:'今すぐ何かを始めなくても大丈夫。自分が楽に過ごせる形を選ぼう。',advice:'やることを一つ減らせそうか、見てみよう。',action:'やることを一つ減らせそうか、見てみよう。',lowEnergy:true};}
+
+ const text=contextText(value);
+ // Urgent harm and abuse take precedence over every optimistic reframe.
+ const urgent=rules.slice(0,2).find(rule=>rule.test.test(text));
+ if(urgent)return {...urgent,daily:urgent.positive,advice:urgent.action};
+ const topic=matchingTopic(value);
+ if(topic){const line=rotate('message-'+topic.id,topic.variants);const tip=rotate('advice-'+topic.id,topic.advice.map(i=>adviceBank[i]));return {ack:topic.ack,positive:line,daily:line,action:'小さな一歩：'+tip,advice:tip};}
+ const base=rules.slice(2).find(rule=>rule.test.test(text))||fallback;
+ const line=rotate('general',[base.positive,'今の気持ちを急いで変えなくても大丈夫。自分をいたわる選択から始めよう。','全部を一度に解決しなくてもいい。今できる小さな一歩を選ぼう。']);
+ const tip=rotate('general-advice',[adviceBank[2],adviceBank[13],adviceBank[25]]);return {...base,positive:line,daily:line,advice:tip,action:'小さな一歩：'+tip};
+}
+const dailyMessageGroups=[["anxiety","不安|心配|怖|こわ|緊張",["不安を言葉にできたね。今日は、安心できることを一つ確かめよう。","先のことが気になる日もあるよね。まだ決めなくていいことは、少し置いておこう。","怖さがあるときは、立ち止まってもいい。安心できる距離から始めよう。","心配になるほど、大切に思っているんだね。自分が休める時間も大事にしていい。"]],["failure","失敗|ミス|間違|できな|出来な|うまくいか|上手くいか",["失敗すると、心が沈むよね。一つの結果だけで、あなたの全部は決まらない。","思いどおりにならなかったんだね。やり方は、落ち着いてから選び直せるよ。","できなかったことが気になるね。助けや道具を借りる方法もあるよ。","悔しい気持ちは、すぐに消さなくていい。次は何を変えたいか、一つだけ見つけよう。"]],["confidence","自信|比べ|比較|欠点|欠け|劣等|取り残|置き去り|置いていか|どうせ",["自信が持てない日もあるよね。今日できた小さなことに、目を向けてみよう。","誰かがまぶしく見えることもあるね。あなたには、あなたが積み重ねてきた時間がある。","欠けたところばかり気になるんだね。自分の良さは、人に教えてもらってもいい。","置いていかれるようで、心細いね。今いる場所から、自分の歩幅を選んでいい。"]],["tired","疲|つかれ|しんど|限界|休みたい",["疲れがたまっているんだね。今日は、終わらせることより休むことを選んでもいい。","ここまで動いてきた自分に、ひと息を。何もしない時間にも、居場所があっていい。","しんどさを感じたら、予定を軽くしていい。明日の自分に余力を残そう。","体や心が休みたいと知らせているのかもしれないね。返事や用事は、待ってもらう選択もあるよ。"]],["rush","焦|あせ|手遅れ|遅すぎ",["急ぎたくなる気持ちがあるんだね。今は一つ終えるだけでも十分だよ。","時間が気になると、息も詰まるよね。少し息を吐いて、次の動作だけ選ぼう。","間に合わなかったことは残念だったね。今から調整できる部分を探してみよう。","早く答えを出したくなるね。少し考える時間をもらってもいいんだよ。"]],["sad","悲|かなしい|泣|涙|落ち込|落ちこ|失う|失った|失って|喪失|なくした|つら|辛",["悲しい気持ちを、ここに置いていいよ。今日は心が落ち着く場所を選ぼう。","涙が出る日も、あなたは大切な人。言葉にできなくても、そばにいてもらっていい。","失ったものを思う時間があっていい。急いで新しい何かで埋めなくて大丈夫。","気持ちが沈む日は、楽しめなくてもいい。温かさや心地よさを、少し受け取ろう。"]],["lonely","寂|さびし|さみし|孤独|ひとりぼっち|独りぼっち|友達|人間関係|嫌われ",["寂しいと感じているんだね。誰かに声をかけたい気持ちを、大切にしていい。","一人で抱えてきたことがあるんだね。話す相手は、身近な人以外から探してもいい。","つながりがほしい日もあるよね。短いあいさつから始まる関係もあるよ。","人の反応が気になることもあるね。気を張らずに過ごせるつながりを選んでいい。"]],["burden","負担|重荷|無理|むり|我慢|がまん|押しつけ|押し付け",["抱えるものが多かったんだね。一人で持ちきれない分は、分けていいよ。","引き受けるのが苦しいんだね。「今は難しい」と伝えることも、自分を守る方法だよ。","我慢してきた気持ちにも、耳を傾けよう。あなたの希望も、話し合いに入れていい。","今のやり方が合わないと感じているんだね。量や順番を変えるところから考えよう。"]],["frustration","怒|イライラ|いらいら|腹が立|責め|むかつ|ムカつ",["腹が立つことがあったんだね。返事を選ぶ前に、少し距離をとってもいい。","責める言葉が浮かぶほど、苦しいんだね。出来事と人の価値を、分けて考えてみよう。","納得できない気持ちも大切だよ。どうしてほしかったのか、落ち着いてから伝えよう。","怒りを急いで消さなくていい。大切にしたい境界線に気づくきっかけにしよう。"]],["stuck","面倒|めんどう|無駄|むだ|ムダ|足りない|不足|損",["取りかかるのが重い日もあるよね。最初の二分だけなら、どうできるか考えよう。","報われなかった感じがするんだね。次は続けない、と決める選択もあるよ。","足りないものが気になるね。必要な順に、一つずつ整えればいい。","損をしたことが悔しいね。落ち着いてから、次の選び方に役立つことを拾おう。"]],["danger","危険|危ない|あぶない",["危険を感じる感覚を、大切にしてね。まずは安全な場所へ離れることを優先しよう。","怖い状況を一人で解決しなくていい。安全を守るための助けを求めよう。","危険に向き合い続ける必要はないよ。その場を離れ、頼れる人や窓口につながっていい。"]],["coercion","強制|強要|無理やり|無理矢理",["望まないことを求められて、つらいね。あなたの意思は尊重されていい。","断りづらい状況なんだね。危険を伴うなら、直接対抗せず助けを借りよう。","同意できない気持ちを、なかったことにしなくていい。安全な距離と相談できる相手を探そう。"]],["general","",["今の気持ちを伝えてくれてありがとう。すぐに答えを出さず、ひと息ついてもいい。","うまく説明できない気持ちも、そのまま大切にしていい。今ほしい助けを一つ考えよう。","ここに書く時間を、自分のためにとれたね。今日は何を少し軽くしたいかな。","今の自分に必要なことを、ゆっくり確かめよう。小さく選び直すところからで大丈夫。"]]];
+
+const lastDailyMessages=new Map();
+const dailyMessageFilters={"anxiety":["不安","不安|心配","怖|こわ","心配"],"failure":["失敗|ミス|間違","失敗|ミス|うまくいか|上手くいか","できな|出来な","悔|失敗|ミス"],"confidence":["自信","比べ|比較","欠点|欠け|劣等","取り残|置き去り|置いていか"],"tired":["疲|つかれ","疲|つかれ","しんど|限界","疲|つかれ|休みたい"],"rush":["焦|あせ","焦|あせ","手遅れ|遅すぎ","焦|あせ"],"sad":["悲|かなしい","泣|涙","失う|失った|失って|喪失|なくした","悲|落ち込|落ちこ|つら|辛"],"lonely":["寂|さびし|さみし","孤独|ひとりぼっち|独りぼっち","寂|さびし|さみし|孤独","友達|人間関係|嫌われ"],"burden":["負担|重荷","無理|むり|負担","我慢|がまん|押しつけ|押し付け","負担|無理|むり"],"frustration":["怒|イライラ|いらいら|腹が立|むかつ|ムカつ","責め","怒|イライラ|いらいら|腹が立","怒|イライラ|いらいら|腹が立"],"stuck":["面倒|めんどう","無駄|むだ|ムダ","足りない|不足","損"]};
+function chooseDailyMessage(value,response){
+ if(response.everydayKey)return response.daily;
+ if(response.lowEnergy)return rotate("low-energy",dailyMessageGroups.find(g=>g[0]==="tired")[2].slice(2));
+ const text=contextText(value);
+ if(rules.slice(0,2).some(rule=>rule.test.test(text)))return response.positive;
+ let group=dailyMessageGroups.find(g=>g[0]==='danger'&&new RegExp(g[1]).test(text))||dailyMessageGroups.find(g=>g[0]==='coercion'&&new RegExp(g[1]).test(text));
+ if(!group){
+ const candidates=dailyMessageGroups.filter(g=>g[1]&&!['danger','coercion'].includes(g[0])&&new RegExp(g[1]).test(text));
+ // Choose the group matching the most recently expressed feeling; rotate only within it.
+ candidates.sort((a,b)=>{const last=g=>Math.max(...Array.from(text.matchAll(new RegExp(g[1],'g')),m=>m.index));return last(b)-last(a)});
+ group=candidates[0]||dailyMessageGroups.find(g=>g[0]==='general');
+ }
+ const filters=dailyMessageFilters[group[0]];
+ const matched=filters?group[2].filter((message,i)=>new RegExp(filters[i]).test(text)):group[2];
+ const choices=matched.length>=2?matched:[...matched,...dailyMessageGroups.find(g=>g[0]==='general')[2].slice(0,2)];
+ const key='daily-'+group[0];
+ // Avoid an immediate repeated sentence even when the eligible subset changes.
+ const previous=lastDailyMessages.get(key);const pool=choices.filter(message=>message!==previous);
+ const message=rotate(key,pool.length?pool:choices);lastDailyMessages.set(key,message);return message;
+}
+
+function distinctVitaminMessage(value,response){const candidate=chooseDailyMessage(value,response);const empathy=response.ack||'';if(candidate!==response.positive&&candidate!==empathy)return candidate;const fallbacks=['好きなことを楽しむ時間も、今日の大切な予定。','小さな楽しみをひとつ、今日の予定に招いてみよう。','あなたらしいペースで、景色の変化を味わおう。'];return rotate('distinct-vitamin',fallbacks.filter(text=>text!==response.positive&&text!==empathy));}
+function showPersonalMessage(response){personalMessageShown=true;const value=$('feeling').value;$('daily-message').textContent=distinctVitaminMessage(value,response);$('daily-advice').textContent=response.advice;}
+
+function updateDaily(){const now=new Date();const n=Math.floor(Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())/86400000);const pair=['うれしい日も、普通の日も。今日はどんな気持ちかな。','今の気持ちに近いボタンを一つ選んでね。'];$('date').textContent=`${now.getMonth()+1}/${now.getDate()}`;if(!personalMessageShown){$('daily-message').textContent=pair[0];$('daily-advice').textContent=pair[1];}}
+function updateCount(){$('result-heading').textContent=everydayMood($('feeling').value)?'今の気持ちに、ひとこと。':'こんな見方も、できるかも。';$('error').textContent='';$('feeling').removeAttribute('aria-invalid');$('result').hidden=false;$('ack').textContent='気持ちを選んで「こころのビタミンを受け取る」を押すと、ここに新しい見方をお届けします。';$('positive').textContent='';$('action').textContent='';$('result-foot').hidden=true;document.querySelectorAll('[data-example]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.example===$('feeling').value)));updateMood();}
+
+const poses={
+ relax:[560,0,'ぬいぐるみを抱いてリラックスする表情','少し休んでも大丈夫だよ。','./character-more-transparent.png'],
+ affection:[850,0,'手でハートをつくる表情','あなたの気持ちを大切にしよう。','./character-more-transparent.png'],
+ ponder:[845,475,'指を添えて考える表情','ひとつずつ考えてみよう。','./character-more-transparent.png'],
+ wink:[1395,0,'やさしくウインクする表情','あなたのペースで進もう。','./character-more-transparent.png'],
+ sleepy:[1395,475,'目を閉じて休む表情','休める時間を大切に。','./character-more-transparent.png'],
+
+ laughing:[280,475,'にっこり笑った表情','小さな一歩を大切にしよう。'],
+ energetic:[1392,475,'手を振る表情','あなたのペースを応援するよ。'],
+ neutral:[5,0,'穏やかな表情','そのままの気持ちを聞かせてね。'],
+ happy:[820,0,'うれしい表情','うれしい気持ち、大切にしよう。'],
+ sad:[1398,0,'しょんぼりした表情','無理に元気を出さなくていいよ。'],
+ angry:[1120,0,'怒った表情','その気持ちにも、理由があるよね。'],
+ thinking:[1115,475,'考えている表情','ひとつずつ、一緒に考えよう。'],
+ crying:[560,475,'泣いている表情','泣きたい日は、泣いてもいいよ。'],
+ shy:[835,475,'はにかんだ表情','自分のペースで大丈夫だよ。'],
+ surprised:[5,475,'驚いた表情','びっくりしたね。ひと呼吸しよう。']
+};
+function selectMood(text){
+ const t=text.normalize('NFKC');
+ if(/死にたい|消えたい|自殺|自傷|虐待|暴力|いじめ/.test(t))return 'neutral';
+ if(/泣|涙/.test(t))return 'crying';
+ if(/怒|イライラ|いらいら|むかつ|ムカつ|腹が立|許せ/.test(t))return 'angry';
+ if(/悲|疲|つかれ|つら|辛|しんど|寂|さみし|さびし|落ち込|失敗|ミス|限界/.test(t))return 'sad';
+ if(/不安|心配|悩|迷|こわ|怖|どうしよう|自信がない|自信が持てない/.test(t))return 'thinking';
+ if(/驚|びっくり/.test(t))return 'surprised';
+ if(/恥ずか|照れ|緊張/.test(t))return 'shy';
+ if(/嬉|うれし|楽しい|楽しみ|幸せ|ありがとう|やった|わくわく|ワクワク/.test(t))return 'happy';
+ return 'neutral';
+}
+function updateReframeArt(){
+ const value=$('feeling').value.trim();const text=contextText(value);const topic=matchingTopic(value);
+ const urgent=rules.slice(0,2).some(r=>r.test.test(text))||['危険','強制'].includes(topic?.label);
+ const primary=$('portrait').dataset.mood||'neutral';
+ // Choose a complete set for the expressed feeling, keeping four distinct poses.
+ const sets={
+ neutral:['shy','relax','ponder'],
+ relax:['neutral','shy','ponder'],
+ sleepy:['relax','neutral','shy'],
+ ponder:['neutral','relax','shy'],
+ affection:['happy','wink','laughing'],
+ wink:['happy','affection','laughing'],
+ laughing:['happy','wink','affection'],
+ energetic:['wink','happy','affection'],
+ happy:['laughing','wink','affection'],
+ sad:['shy','neutral','thinking'],
+ crying:['sad','shy','neutral'],
+ angry:['thinking','neutral','shy'],
+ thinking:['ponder','shy','neutral'],
+ shy:['neutral','thinking','laughing'],
+ surprised:['thinking','neutral','shy']
+ };
+ let selected=urgent?['thinking','shy','sad']:(sets[primary]||sets.neutral);
+ if(!urgent&&['疲れ','しんどい'].includes(topic?.label))selected=['relax','neutral','sleepy'];
+ if(!urgent&&['寂しい','孤独'].includes(topic?.label))selected=['affection','ponder','neutral'];
+ if(!urgent&&topic?.label==='焦り')selected=['shy','neutral','sad'];
+ const used=new Set([primary]);
+ selected=selected.map(p=>{const pose=used.has(p)?['neutral','shy','thinking','sad','happy','energetic'].find(candidate=>!used.has(candidate)):p;used.add(pose);return pose;});
+ for(const [index,id] of ['reframe-art','message-art','advice-art'].entries()){
+ const mood=selected[index];const pose=poses[mood];$(id).style.setProperty('--reframe-x',(-pose[0]/270*100)+'%');$(id).style.setProperty('--reframe-y',(-pose[1]/430*100)+'%');$(id).dataset.mood=mood;$(id).querySelector('img').src=pose[4]||'./character-transparent.png';
+ }
+ $('reframe-character').alt='入力した気持ちに寄り添う女の子：'+poses[selected[0]][2];
+}
+function updateMood(){
+ const value=$('feeling').value.trim();const everyday=everydayMood(value);const mood=everyday?everyday[3]:rules.slice(0,2).some(r=>r.test.test(contextText(value)))?'neutral':(matchingTopic(value)?.mood||selectMood(contextText(value)));const pose=poses[mood];
+ $('character').src=pose[4]||'./character-transparent.png';
+ $('portrait').style.setProperty('--pose-x',(-pose[0]/270*100)+'%');
+ $('portrait').style.setProperty('--pose-y',(-pose[1]/415*100)+'%');
+ $('portrait').dataset.mood=mood;$('character').alt='ピンクのサングラスの女の子：'+pose[2];
+ $('speech').textContent=everyday?everyday[4]:value?pose[3]:'今日は、今日のペースで。';
+ updateReframeArt();$('mood-caption').textContent=value?'言葉から選んだ表情：'+pose[2]:'言葉に合わせて表情が変わります。';
+}
+
+updateMood();
+
+
+document.querySelectorAll('[data-example]').forEach(button=>button.addEventListener('click',()=>{$('feeling').value=button.dataset.example;updateCount();document.querySelector('[data-example][aria-pressed="true"]')?.focus();}));
+$('form').addEventListener('submit',event=>{event.preventDefault();const value=$('feeling').value.trim();if(!value){$('error').textContent='ひとことでも大丈夫。いまの気持ちを選んでね。';$('feeling').setAttribute('aria-invalid','true');document.querySelector('[data-example]')?.focus();return;}const match=responseFor(value);$('result-heading').textContent=match.everydayKey?'今の気持ちに、ひとこと。':'こんな見方も、できるかも。';showPersonalMessage(match);$('ack').textContent=match.ack;$('positive').textContent=match.positive;$('action').textContent=match.action;updateReframeArt();$('result-foot').hidden=false;$('result').hidden=false;$('result').focus({preventScroll:true});$('result').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'nearest'});updateDaily();});
+$('reset').addEventListener('click',()=>{$('feeling').value='';updateCount();document.querySelector('[data-example][aria-pressed="true"]')?.focus();});
+window.addEventListener('pageshow',()=>{$('feeling').value='';updateCount();updateDaily();});document.addEventListener('visibilitychange',()=>{if(!document.hidden)updateDaily();});updateDaily();
+
+// Footer character is fixed to pose 12: Energetic, from the transparent PNG.
+function showMarikaEnergetic(){
+ const pose=poses.energetic;
+ $('daily-marika').style.setProperty('--marika-x',(-pose[0]/270*100)+'%');
+ $('daily-marika').style.setProperty('--marika-y',(-pose[1]/430*100)+'%');
+ $('daily-marika').dataset.pose='energetic';
+ $('daily-marika-image').alt='カップを持ってほほえむポジマリちゃん';
+}
+showMarikaEnergetic();
+
+
+
+function sizeMarikaBloom(){
+ const width=window.innerWidth;const unit=width<=480?120:130;
+ $('daily-marika').style.setProperty('--marika-wide-scale',String(Math.max(2.6,width/unit*1.15)));
+}
+window.addEventListener('resize',sizeMarikaBloom,{passive:true});sizeMarikaBloom();
+</script>
+</body>
+</html>
